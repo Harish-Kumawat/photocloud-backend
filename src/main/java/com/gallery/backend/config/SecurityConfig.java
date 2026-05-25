@@ -40,6 +40,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/photos/public/**").permitAll()
                 .requestMatchers("/api/admin/**").permitAll()
+                .requestMatchers("/ping").permitAll()
                 .anyRequest().authenticated())
             .addFilterBefore(jwtFilter,
                 UsernamePasswordAuthenticationFilter.class);
